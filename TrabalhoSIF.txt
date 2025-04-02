@@ -1,0 +1,28 @@
+matriz de risco da aplicação de login
+
+| ameaça                                 | probabilidade | impacto | estratégia de resposta                                                                            | prioridade |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| armazenamento de senhas em texto plano | alta          | alto    | implementar criptografia para senhas e não armazená-las em texto plano                            | alta       |
+| tentativas de login não controladas    | alta          | alto    | implementar bloqueio de IP após tentativas falhadas e usar CAPTCHA                                | alta       |
+| falta de validação de entrada          | média         | alto    | implementar validações robustas para entradas de usuário                                          | alta       |
+| falta de proteção contra CSRF          | média         | alto    | implementar tokens CSRF para proteger formulários                                                 | alta       |
+| logs de atividades acessíveis          | média         | médio   | garantir que os logs sejam armazenados de forma segura e acessíveis apenas a usuários autorizados | média      |
+| uso de senhas fracas                   | alta          | alto    | impor requisitos de complexidade para senhas                                                      | média      |
+| falta de autenticação                  | alta          | médio   | implementar para todos os usuários, SMS ou autenticação por app                                   | média      |
+
+
+plano de continência em caso de incidentes:
+- **armazenamento de senhas em texto plano**: auditar o sistema para garantir que as senhas sejam armazenadas de forma segura
+
+- **tentativas de login não controladas**: monitorar tentativas de login e implementar um sistema de alerta para atividades suspeitas
+
+- **falta de validação de entrada**: revisar o código para garantir que todas as entradas sejam validadas corretament
+
+- **falta de proteção contra CSRF**: implementar medidas de segurança para proteger contra CSRF
+
+- **logs de atividades acessíveis**: revisar as permissões de acesso aos logs e garantir que sejam armazenados de forma segura
+
+- **uso de senhas fracas**: Auditar as senhas dos usuários para garantir que elas atendam aos requisitos de segurança mínimos (ex: comprimento mínimo de 8 caracteres, mistura de maiúsculas, minúsculas, números e caracteres especiais). Implementar um sistema que verifique a complexidade das senhas no momento do registro e solicite aos usuários a troca de senhas fracas ou comuns.
+
+- **falta de autenticação multifatorial**: Implementar autenticação multifatorial para todos os usuários, obrigando uma segunda camada de segurança, como um código enviado por SMS ou gerado por um aplicativo de autenticação (ex: Google Authenticator, Authy). Isso ajuda a prevenir acessos não autorizados, mesmo que as credenciais do usuário sejam comprometidas.
+
